@@ -43,7 +43,12 @@
       "mcp__claude_ai_DataDog__search_datadog_logs",
       "mcp__claude_ai_DataDog__search_datadog_spans",
       "mcp__claude_ai_DataDog__search_datadog_monitors",
-      "mcp__claude_ai_DataDog__search_datadog_events"
+      "mcp__claude_ai_DataDog__search_datadog_events",
+      "mcp__qdrant__qdrant-find",
+      "mcp__qdrant__qdrant-store",
+      "mcp__qdrant__qdrant-find-with-ids",
+      "mcp__qdrant__qdrant-delete",
+      "Bash(curl -s http://127.0.0.1:6333/*)"
     ]
   },
   "hooks": {
