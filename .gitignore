@@ -1,0 +1,23 @@
+sessions/
+history.jsonl
+cache/
+backups/
+downloads/
+paste-cache/
+shell-snapshots/
+stats-cache.json
+mcp-needs-auth-cache.json
+telemetry/
+usage-data/
+file-history/
+ide/
+session-env/
+plugins/
+policy-limits.json
+
+# Session transcripts and tool results (large, not needed for restore)
+projects/**/*.jsonl
+projects/**/tool-results/
+projects/**/*.meta.json
+projects/**/*.jpg
+projects/**/*.png

@@ -1,0 +1,62 @@
+{
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Read(//Users/tommy.helin/repos/**)",
+      "Edit(//Users/tommy.helin/repos/**)",
+      "Write(//Users/tommy.helin/repos/**)",
+      "Read(//Users/tommy.helin/.m2/repository/**)",
+      "Read(//private/tmp/**)",
+      "Bash(./mvnw test:*)",
+      "Bash(./mvnw install:*)",
+      "Bash(./mvnw clean:*)",
+      "Bash(./mvnw compile:*)",
+      "Bash(git:*)",
+      "Bash(git status:*)",
+      "Bash(gh *)",
+      "Bash(docker run:*)",
+      "Bash(docker ps:*)",
+      "Bash(open -a Docker)",
+      "Bash(python3:*)",
+      "Bash(python3.12 -m venv *)",
+      "Bash(pip3 *)",
+      "Bash(~/qdrant-mcp-venv/bin/pip install *)",
+      "Bash(~/.claude/qdrant-sync.sh)",
+      "Bash(claude mcp *)",
+      "Bash(curl -s http://127.0.0.1:6333/collections)",
+      "Bash(jar xf:*)",
+      "Bash(jar tf:*)",
+      "Bash(javap *)",
+      "WebSearch",
+      "WebFetch(domain:docs.datadoghq.com)",
+      "WebFetch(domain:support.atlassian.com)",
+      "Skill(investigate)",
+      "mcp__claude_ai_Atlassian__atlassianUserInfo",
+      "mcp__claude_ai_Atlassian__getAccessibleAtlassianResources",
+      "mcp__claude_ai_Atlassian__getJiraIssue",
+      "mcp__claude_ai_Atlassian__searchJiraIssuesUsingJql",
+      "mcp__claude_ai_DataDog__check_datadog_mcp_setup",
+      "mcp__claude_ai_DataDog__search_datadog_services",
+      "mcp__claude_ai_DataDog__search_datadog_logs",
+      "mcp__claude_ai_DataDog__search_datadog_spans",
+      "mcp__claude_ai_DataDog__search_datadog_monitors",
+      "mcp__claude_ai_DataDog__search_datadog_events"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/qdrant-sync.sh",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

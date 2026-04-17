@@ -1,0 +1,9 @@
+- [project_consume_all.md](project_consume_all.md) - Architecture overview: retry handling, Spanish session management, reprocess job
+- [project_flows_and_decisions.md](project_flows_and_decisions.md) - All 9 failure flows, 3-step session resolution, compliance requirements, design rationale
+- [project_remaining_work.md](project_remaining_work.md) - TODO items for wallet PR and translator service
+- [project_translator.md](project_translator.md) - Push Gaming translator service changes for cleardown flow
+- [project_key_files.md](project_key_files.md) - Map of all files created/modified for consume-all feature
+- [user_tommy.md](user_tommy.md) - User profile and working style
+- [feedback_coding_style.md](feedback_coding_style.md) - Coding preferences learned during implementation
+- [feedback_prod_verification.md](feedback_prod_verification.md) - Always verify deployed version via Datadog/live-prod-apps, not just source code/pom.xml
+- [reference_external.md](reference_external.md) - Confluence docs, PR links, repo paths
