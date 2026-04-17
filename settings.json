@@ -4,6 +4,15 @@
     "jdtls-lsp@claude-plugins-official": true,
     "playwright@claude-plugins-official": true
   },
+  "pluginConfigs": {
+    "playwright@claude-plugins-official": {
+      "mcpServers": {
+        "playwright": {
+          "browser": "chrome"
+        }
+      }
+    }
+  },
   "permissions": {
     "allow": [
       "Read(//Users/tommy.helin/repos/**)",
