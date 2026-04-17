@@ -80,6 +80,11 @@
             "type": "command",
             "command": "~/.claude/qdrant-sync.sh",
             "async": true
+          },
+          {
+            "type": "command",
+            "command": "git fetch --all --quiet 2>/dev/null || true",
+            "async": true
           }
         ]
       }
