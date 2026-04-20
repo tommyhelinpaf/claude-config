@@ -9,3 +9,4 @@
 - [feedback_prod_monitoring.md](feedback_prod_monitoring.md) - Always offer Datadog post-deploy check when Tommy deploys to prod
 - [reference_external.md](reference_external.md) - Confluence docs, PR links, repo paths
 - [feedback_gh_repo_list.md](feedback_gh_repo_list.md) - gh repo list är inkomplett — bekräfta aldrig att ett repo saknas baserat på det
+- [feedback_iam_secrets.md](feedback_iam_secrets.md) - Tänk proaktivt på IAM/Secrets Manager-fallgropar vid deploy av nya tjänster
