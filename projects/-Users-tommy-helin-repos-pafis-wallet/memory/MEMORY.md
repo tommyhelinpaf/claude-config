@@ -10,3 +10,4 @@
 - [reference_external.md](reference_external.md) - Confluence docs, PR links, repo paths
 - [feedback_gh_repo_list.md](feedback_gh_repo_list.md) - gh repo list är inkomplett — bekräfta aldrig att ett repo saknas baserat på det
 - [feedback_iam_secrets.md](feedback_iam_secrets.md) - Tänk proaktivt på IAM/Secrets Manager-fallgropar vid deploy av nya tjänster
+- [feedback_pr_signing.md](feedback_pr_signing.md) - Alltid lokal git + git commit -S för PRs, aldrig GitHub API (kräver GPG-signerade commits)
