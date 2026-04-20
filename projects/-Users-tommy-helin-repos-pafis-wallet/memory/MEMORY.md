@@ -11,3 +11,5 @@
 - [feedback_gh_repo_list.md](feedback_gh_repo_list.md) - gh repo list är inkomplett — bekräfta aldrig att ett repo saknas baserat på det
 - [feedback_iam_secrets.md](feedback_iam_secrets.md) - Tänk proaktivt på IAM/Secrets Manager-fallgropar vid deploy av nya tjänster
 - [feedback_pr_signing.md](feedback_pr_signing.md) - Alltid lokal git + git commit -S för PRs, aldrig GitHub API (kräver GPG-signerade commits)
+- [feedback_always_link.md](feedback_always_link.md) - Inkludera alltid URL när något som nämns har en länk (PR, repo, Datadog, etc.)
+- [reference_qdrant_backup.md](reference_qdrant_backup.md) - Qdrant backup via cron 15:00 varje vardag → https://github.com/tommyhelinpaf/claude-config
