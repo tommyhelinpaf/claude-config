@@ -6,4 +6,5 @@
 - [user_tommy.md](user_tommy.md) - User profile and working style
 - [feedback_coding_style.md](feedback_coding_style.md) - Coding preferences learned during implementation
 - [feedback_prod_verification.md](feedback_prod_verification.md) - Always verify deployed version via Datadog/live-prod-apps, not just source code/pom.xml
+- [feedback_prod_monitoring.md](feedback_prod_monitoring.md) - Always offer Datadog post-deploy check when Tommy deploys to prod
 - [reference_external.md](reference_external.md) - Confluence docs, PR links, repo paths
