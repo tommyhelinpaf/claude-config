@@ -1,4 +1,5 @@
 {
+  "autoUpdatesChannel": "latest",
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "jdtls-lsp@claude-plugins-official": true,
