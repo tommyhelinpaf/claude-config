@@ -1,21 +1,5 @@
 {
-  "autoUpdatesChannel": "latest",
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
-    "jdtls-lsp@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
-  },
-  "pluginConfigs": {
-    "playwright@claude-plugins-official": {
-      "mcpServers": {
-        "playwright": {
-          "browser": "chrome"
-        }
-      }
-    }
-  },
   "permissions": {
-    "defaultMode": "bypassPermissions",
     "allow": [
       "Read(//Users/tommy.helin/repos/**)",
       "Edit(//Users/tommy.helin/repos/**)",
@@ -81,7 +65,8 @@
       "mcp__playwright__browser_install",
       "mcp__playwright__browser_resize",
       "mcp__playwright__browser_evaluate"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   },
   "hooks": {
     "SessionStart": [
@@ -111,5 +96,21 @@
         ]
       }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  },
+  "pluginConfigs": {
+    "playwright@claude-plugins-official": {
+      "mcpServers": {
+        "playwright": {
+          "browser": "chrome"
+        }
+      }
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "skipDangerousModePermissionPrompt": true
 }
