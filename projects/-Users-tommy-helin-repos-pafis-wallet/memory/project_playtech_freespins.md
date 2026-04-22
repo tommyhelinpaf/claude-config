@@ -20,6 +20,18 @@ Tommy har precis avslutat Push Gaming freespin-consume-all-integrationen (se `pr
 - `playtechgoc-backend-service` — EXISTERAR. Backend för Playtech GOC.
 - `playtechgoc-bonus-service` — **FINNS INTE**. Måste byggas (eller utvidgas från backend-service) för assignment-flöde.
 - `pafis-wallet` har Platform-enums PLAYTECH, PLAYTECHGOCSPAIN, PLAYTECHGOCSWITZERLAND i configs men ingen Playtech-specifik affärslogik.
+- ⚠️ `pafis-bonus-service` **FINNS INTE LÄNGRE** (bekräftat av Tommy 2026-04-22). Mergats in i pbs. Gamla referenser i Confluence-guider och Jira-templates (t ex ECTFNI-152) ska tolkas som pbs-komponenter idag.
+
+## Återanvändbar kunskap i Qdrant (cross-repo, cross-session)
+
+Sökbart via Qdrant när du börjar nästa session:
+- Bonus/freespins integration-checklista (Tommys personliga notes) — sök "bonus integration checklist"
+- Services-karta + deployment-ordning — sök "freespin bonus integration services"
+- Summary-req mönster A/B (Greentube vs Push Gaming/Playtech) — sök "summary request pattern freespins"
+- ECTFNI-136 template + alla 30 template-stories — sök "ECTFNI bonus template stories"
+- Confluence-guide "How to integrate Free Spins" (delvis outdated) — sök "confluence free spins guide"
+- Korrigering: pafis-bonus-service är borta — sök "pafis-bonus-service correction"
+- Session-start-arbetsflöde för bonus-projekt — sök "session start bonus integration workflow"
 
 ---
 
