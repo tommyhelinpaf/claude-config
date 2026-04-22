@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/tommy.helin/repos/pafis-wallet/**)",
+      "Bash(/Users/tommy.helin/repos/integrations-commons/mvnw *)",
+      "Bash(pushd /Users/tommy.helin/repos/integrations-commons)",
+      "Bash(popd)",
+      "Bash(gpg --list-secret-keys --keyid-format LONG)",
+      "Bash(gpg --clearsign)",
+      "Bash(tty)",
+      "Bash(export GPG_TTY=$\\(tty\\))",
+      "Bash(gpgconf --launch gpg-agent)",
+      "Bash(gpgconf --kill gpg-agent)",
+      "Bash(export PINENTRY_USER_DATA=\"\")",
+      "Bash(gpg --batch --pinentry-mode loopback --clearsign)",
+      "Bash(gpg-connect-agent 'get_passphrase --data X X X X' /bye)",
+      "Bash(brew install *)",
+      "mcp__claude_ai_DataDog__analyze_datadog_logs",
+      "mcp__claude_ai_DataDog__search_datadog_logs",
+      "mcp__claude_ai_DataDog__search_datadog_events",
+      "mcp__claude_ai_DataDog__search_datadog_services",
+      "mcp__claude_ai_DataDog__search_datadog_monitors",
+      "mcp__claude_ai_DataDog__search_datadog_spans",
+      "mcp__claude_ai_DataDog__aggregate_spans",
+      "mcp__claude_ai_Atlassian__getJiraIssue",
+      "mcp__claude_ai_Atlassian__searchJiraIssuesUsingJql",
+      "mcp__qdrant__qdrant-find",
+      "mcp__playwright__browser_snapshot",
+      "Bash(gh search *)",
+      "Skill(update-config)",
+      "Bash(xargs -I{} gh api \"repos/pafcloud/pafis-tx-pushgaming-service/git/commits/{}\" --jq '{date: .committer.date, message: .message[0:80]}')",
+      "Bash(xargs -I{} gh api \"repos/pafcloud/pafis-tx-pushgaming-service/git/refs/tags/v0.1.113\" --jq '.object.sha')",
+      "Bash(chmod +x ~/.claude/qdrant-backup.sh)",
+      "Bash(bash ~/.claude/qdrant-backup.sh)",
+      "Bash(bash *)",
+      "Bash(crontab *)",
+      "Bash(xargs ls *)",
+      "Bash(xargs -I{} python3 -c \" import sys, json f = sys.argv[1] try: with open\\(f\\) as fh: for line in fh: try: obj = json.loads\\(line\\) msg = obj.get\\('message', {}\\) if msg.get\\('role'\\) == 'assistant': for c in msg.get\\('content', []\\): if c.get\\('type'\\) == 'tool_use' and c.get\\('name'\\) == 'Bash': cmd = c.get\\('input', {}\\).get\\('command', ''\\) if cmd: print\\(cmd[:200]\\) except: pass except: pass \" {})",
+      "Bash(mkdir -p ~/.claude/project-settings/pafis-wallet)",
+      "Bash(cp /Users/tommy.helin/repos/pafis-wallet/.claude/settings.local.json ~/.claude/project-settings/pafis-wallet/settings.local.json)"
+    ]
+  }
+}
