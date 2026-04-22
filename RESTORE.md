@@ -24,7 +24,13 @@ mkdir -p ~/repos/pafis-wallet/.claude
 cp ~/.claude/project-settings/pafis-wallet/settings.local.json ~/repos/pafis-wallet/.claude/settings.local.json
 ```
 
-### 4. Set up cron backup (so backups continue automatically)
+### 4. Restore global gitignore
+```bash
+cp ~/.claude/gitignore_global ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+### 5. Set up cron backup (so backups continue automatically)
 ```bash
 crontab -e
 ```
@@ -33,10 +39,10 @@ Add this line:
 0 15 * * 1-5 bash ~/.claude/claude-backup.sh >> ~/.claude/backup-cron.log 2>&1
 ```
 
-### 5. (Optional) Restore Qdrant vector memory
+### 6. (Optional) Restore Qdrant vector memory
 Start Qdrant locally, then import `qdrant-backup.json` via the Qdrant API.
 
-### 6. Start Claude Code
+### 7. Start Claude Code
 Open a new session — memories will be loaded automatically from `projects/*/memory/`.
 
 ## In a new Claude session, say:
