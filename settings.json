@@ -15,6 +15,7 @@
     }
   },
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Read(//Users/tommy.helin/repos/**)",
       "Edit(//Users/tommy.helin/repos/**)",
