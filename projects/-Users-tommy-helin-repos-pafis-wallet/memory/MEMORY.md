@@ -16,3 +16,4 @@
 - [reference_restore_new_machine.md](reference_restore_new_machine.md) - Hur du återställer hela Claude-setupen på en ny dator
 - [feedback_no_unversioned_files.md](feedback_no_unversioned_files.md) - Skapa aldrig filer som hamnar som unversioned i git
 - [feedback_simplicity_style.md](feedback_simplicity_style.md) - Håll personliga system enkla, matcha Tommys inline-stil (`......`), inte sub-checkboxar
+- [project_abc_spec.md](project_abc_spec.md) - Tommys ABC-process i Apple Notes (struktur, regler, morgonmöte-flöde, framtida kandidater)
