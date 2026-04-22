@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Bash(find /Users/tommy.helin/repos/pafis-wallet/**)",
       "Bash(/Users/tommy.helin/repos/integrations-commons/mvnw *)",
