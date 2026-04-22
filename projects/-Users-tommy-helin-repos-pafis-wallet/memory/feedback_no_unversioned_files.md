@@ -4,10 +4,12 @@ description: Claude ska aldrig skapa filer i repos som blir unversioned/untracke
 type: feedback
 originSessionId: dd6d207a-ec86-4967-b73f-904c34e99c49
 ---
-Skapa aldrig filer i ett repo som hamnar som untracked/unversioned i git, om de inte är genuint temporära (och tas bort direkt efteråt).
+Skapa aldrig tooling/settings-filer i ett repo som hamnar som untracked/unversioned i git utan att de är gitignore:ade.
 
 **Why:** .factorypath och .claude/settings.local.json dök upp som unversioned i pafis-wallet. Tommy vill inte ha skräp i `git status`.
 
-**How to apply:** Innan du skapar en fil i ett repo — kontrollera om den kommer att synas i `git status`. Om ja: antingen lägg till den i `.gitignore` (globalt eller lokalt) INNAN du skapar den, eller skapa den utanför repot (t.ex. i `~/.claude/`).
+**How to apply:** Gäller ENBART IDE/tooling-filer och personliga settings som aldrig ska committas till teamets repo (t.ex. `.factorypath`, `.claude/settings.local.json`). Kodfiler (Java-klasser, konfigurationsfiler, tester, etc.) ska alltid vara trackade och committas normalt — gitignore:a aldrig kodfiler.
 
-Globala gitignore-regler finns i `~/.gitignore_global` (konfigurerad via `git config --global core.excludesfile`). Redan ignorerade: `.factorypath`, `.claude/settings.local.json`, `.claude/settings.json`.
+För tooling-filer: lägg till i `~/.gitignore_global` (global, påverkar alla repos) eller be Tommy lägga till i `.gitignore` i repot. Alternativt: skapa filen utanför repot (t.ex. i `~/.claude/`).
+
+Globala gitignore: `~/.gitignore_global`. Redan ignorerade: `.factorypath`, `.claude/settings.local.json`, `.claude/settings.json`.
