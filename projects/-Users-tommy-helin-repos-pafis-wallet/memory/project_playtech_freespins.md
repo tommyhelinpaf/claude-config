@@ -35,22 +35,14 @@ Sökbart via Qdrant när du börjar nästa session:
 
 ---
 
-## Real-time per-bet vs summary-request — ÖPPEN FRÅGA
+## Real-time per-bet vs summary-request — VERIFIERAT 2026-04-23
 
-**Min preliminära tolkning av API-docsen (ifrågasatt av Tommy):**
-- Bet-requests kommer per freespin i real-time. Docsen säger "The reduced free spin count is always -1 because one free spin is allowed at a time".
-- `TransferFunds` används bara för pending winnings/wagering requirement — inte som consume-summary av förbrukade freespins.
-- Det skulle göra det till Rubyplay-mönstret (per-bet realtime), inte Push Gaming-mönstret (summary cleardown).
+Direkt läsning av Playtechs API-docs (via Playwright MCP, inloggad) bekräftar:
 
-**Tommys invändning (2026-04-22):**
-- Playtech har sagt att man kan **stänga av möjligheten för freespins att expirera utanför spelsession**. Det öppnar för att consume-all-mönstret ändå kan fungera.
-- Båda flöden (real-time per-bet OCH summary) kan potentiellt stödjas av Playtech — behöver verifieras närmare.
-- **Denna fråga är inte avgjord.** Tommy ska själv undersöka närmare. Antag inte att det bara är per-bet.
-
-**Vad behöver verifieras:**
-- Kan Playtech konfigureras att skicka en summary-request (motsv. Push Gamings `RGS_FREEROUND_CLEARDOWN`) istället för / utöver per-bet?
-- Om expire-utanför-session är avstängt — innebär det bara att freespins måste konsumeras inom session, eller ändrar det också hur provider kommunicerar med oss?
-- Gäller båda lägena per bonus-template eller per integration?
+- **Bet per spinn är det ENDA flödet för freespin-konsumtion.** Det finns ingen summary-endpoint i Service API eller Wallet API för att samla ihop förbrukade FS.
+- `TransferFunds` är VINST-transfer för pending/wagering-lägen, inte FS-consume-summary.
+- `Tommys invändning` om "stänga av expire utanför session" handlar om att freespins måste konsumeras inom session (eller tas bort via expire) — det ändrar INTE att bet-requesten fortfarande kommer per spinn. Det är en separat compliance-inställning, inte en API-flödesändring.
+- **Slutsats:** Rubyplay-mönstret (per-bet realtime), INTE Push Gaming consume-all. Tommys consume-all-hypotes är avskriven baserat på faktisk API-dokumentation.
 
 ---
 
@@ -76,15 +68,17 @@ Sökbart via Qdrant när du börjar nästa session:
 
 ---
 
-## Beroende på Playtech (måste verifieras med providern)
+## Beroende på Playtech — STATUS efter API-genomgång 2026-04-23
 
-- Kan vi sätta eget assignment-ID eller får vi bara tillbaka deras (då krävs prefix för uniqueness mellan providers)?
-- Idempotens på `GiveFreeSpins` vid retry — finns kontroll-endpoint eller idempotency-key?
-- Stödjer API återanvändbara bonus-program (multipla assignments per player + program)?
-- Direkt-reward vs bonus-program på provider-sida — vilken modell stöds?
-- Kan bet-levels hämtas per game i alla relevanta valutor (inkl EUR för ES)?
-- **[Tommys fråga]** Kan API:et konfigureras för summary-request flöde, och/eller är real-time per-bet det enda läget?
-- Konfigurerbar expire-policy inom/utanför spelsession — bekräftat från Playtech
+- ✅ **Eget ID**: vi sätter `remoteBonusCode` (string, max 128) i `giveFreeSpins` — blir vårt `playerStepId`
+- ✅ **Provider-ID tillbaka**: `bonusInstanceCode` (long) returneras. Prefixa för uniqueness mellan providers.
+- ✅ **Idempotency-check**: `getPlayerActiveBonuses` kan användas som isPlayerInProgram-motsvarighet (matcha på remoteBonusCode). Inget dedikerat idempotency-key-stöd på giveFreeSpins självt.
+- ✅ **Bet-levels**: `getSupportedFreeSpinBetValues` (input: currency + games, output: betValues)
+- ✅ **Direct reward**: `templateCode` pre-konfigureras av Playtech under integration, vi skapar inga program via API
+- ✅ **Summary-flöde**: finns inte, real-time per-bet är enda läget
+- 🟡 **Återanvändbara program (multipla assignments samma spelare + program)**: stödjs troligen eftersom det är direct reward (ny instans per giveFreeSpins), men verifiera i testmiljö
+- 🟡 **Konfigurerbar expire-policy** inom/utanför spelsession: bekräfta med Playtech per bonus-template
+- 🔴 **NotifyBonusEvent är opt-in**: måste be Playtech explicit aktivera för integrationen — kritiskt för Spain reporting
 
 ---
 
