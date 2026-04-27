@@ -21,4 +21,5 @@
 - [project_abc_spec.md](project_abc_spec.md) - Tommys ABC-process i Apple Notes (struktur, regler, morgonmöte-flöde, framtida kandidater)
 - [project_playtech_freespins.md](project_playtech_freespins.md) - Playtech freespin-integration: feasibility, blockers, Spain compliance, per-bet vs summary (ÖPPEN)
 - [project_playtech_open_questions.md](project_playtech_open_questions.md) - Checklista för öppna frågor till Playtech och Tommys egen verifiering innan Playtech-designen låses
+- [project_freespins_pre_test_checklist.md](project_freespins_pre_test_checklist.md) - PINT bonus events MÅSTE vara uppsatta per plattform innan FS-test i CI/prod. Malländring → mail comptech + Johan Ferm.
 - [feedback_abbreviations.md](feedback_abbreviations.md) - Tommys förkortningar: FS = freespins (gäller alltid, alla projekt)
