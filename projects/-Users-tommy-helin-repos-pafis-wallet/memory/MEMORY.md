@@ -23,3 +23,4 @@
 - [project_playtech_open_questions.md](project_playtech_open_questions.md) - Checklista för öppna frågor till Playtech och Tommys egen verifiering innan Playtech-designen låses
 - [project_freespins_pre_test_checklist.md](project_freespins_pre_test_checklist.md) - PINT bonus events MÅSTE vara uppsatta per plattform innan FS-test i CI/prod. Malländring → mail comptech + Johan Ferm.
 - [feedback_abbreviations.md](feedback_abbreviations.md) - Tommys förkortningar: FS = freespins (gäller alltid, alla projekt)
+- [feedback_always_check_qdrant.md](feedback_always_check_qdrant.md) - Sök ALLTID i Qdrant innan "nej jag vet inte" om PAF/domän — även för korta svar
