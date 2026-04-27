@@ -2,8 +2,8 @@
 name: Consume All Flows and Design Decisions
 description: All failure flows, edge cases, compliance requirements, and design rationale for the consume-all freespin solution
 type: project
+originSessionId: 10075cb1-fd9a-47bd-b18f-6c216608b87b
 ---
-
 ## 9 Failure Flows
 
 1. **Happy case** - Use existing get-session logic in WithdrawService. If expired session, continue with fabricated valid timestamp for consumeAll case.
@@ -15,6 +15,7 @@ type: project
 7. **Idempotency** - Same req later gets same units/amount from PBS (getRewardInfoWithPlayerStepId returns original values, not consumed). Existing withdraw idempotency returns rebuilt response from transaction.
 8. **Slotsession down** - New endpoint getSessionByTimestamp used when retry row exists but no session was saved (slotsession was down during first failure). Falls back to latest session if no session found at timestamp.
 9. **Retry table down** - Just throws exception. Provider retry treated as late first request. Even if wallet transaction exists, doesn't matter.
+10. **Sen provider-retry med expired ticket** (upptäckt i prod 2026-04-26) - Provider retryar timmar/dygn senare via egen recon. Translator's `validate(...)` med `ignoreTokenException=true` returnerar null → siteSessionId=null på wallet-requesten. Wallet processar OK men BonusWithdraw publiceras med siteSessionId=null. Producer-v3 GoC-processor kraschar på `requireNonNull(siteSessionId)` → eventet droppas tyst i Snowflake. Se project_producer_v3_retry_gap.md.
 
 ## Spanish Session 3-Step Resolution (SpanishGameSessionService)
 

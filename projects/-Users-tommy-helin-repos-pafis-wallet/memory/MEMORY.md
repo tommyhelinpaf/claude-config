@@ -1,5 +1,7 @@
 - [project_consume_all.md](project_consume_all.md) - Architecture overview: retry handling, Spanish session management, reprocess job
 - [project_flows_and_decisions.md](project_flows_and_decisions.md) - All 9 failure flows, 3-step session resolution, compliance requirements, design rationale
+- [project_producer_v3_retry_gap.md](project_producer_v3_retry_gap.md) - Wallet reprocess-table täcker INTE producer-v3. NPE = silent Snowflake drop. Verifierat i prod 2026-04-26.
+- [project_translator_expired_ticket.md](project_translator_expired_ticket.md) - Sen provider-retry → expired ticket → null siteSessionId hela vägen ner
 - [project_remaining_work.md](project_remaining_work.md) - TODO items for wallet PR and translator service
 - [project_translator.md](project_translator.md) - Push Gaming translator service changes for cleardown flow
 - [project_key_files.md](project_key_files.md) - Map of all files created/modified for consume-all feature
